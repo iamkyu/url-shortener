@@ -26,11 +26,18 @@ dependencies {
     implementation 'org.springframework.boot:spring-boot-starter-data-redis'
 
     compileOnly 'org.projectlombok:lombok'
-    runtimeOnly 'mysql:mysql-connector-java'
+
+    implementation 'it.ozimov:embedded-redis:0.7.2'
+    implementation 'de.flapdoodle.embed:de.flapdoodle.embed.mongo'
+    compile 'com.h2database:h2:1.4.197'
 
     annotationProcessor 'org.projectlombok:lombok'
 
-    testImplementation 'it.ozimov:embedded-redis:0.7.2'
-    testImplementation 'de.flapdoodle.embed:de.flapdoodle.embed.mongo'
-    testImplementation 'org.springframework.boot:spring-boot-starter-test'
+    testImplementation('org.springframework.boot:spring-boot-starter-test') {
+        exclude module: 'junit'
+    }
+    testImplementation 'org.junit.jupiter:junit-jupiter-api'
+    testImplementation 'org.junit.jupiter:junit-jupiter-params'
+    testRuntime 'org.junit.jupiter:junit-jupiter-engine'
+    testImplementation 'org.assertj:assertj-core'
 }
