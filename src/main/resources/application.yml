@@ -1,1 +1,13 @@
+spring:
+  datasources:
+    driverClassName: org.h2.Driver
+    url: jdbc:h2:mem:testdb
+    username: sa
+    password: password
+  redis:
+    host: localhost
+    port: 6379
 
+
+key-service:
+  key-cache-size: 5
