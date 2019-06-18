@@ -1,4 +1,4 @@
-package io.iamkyu.kgs;
+package io.iamkyu.generate;
 
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.stereotype.Repository;

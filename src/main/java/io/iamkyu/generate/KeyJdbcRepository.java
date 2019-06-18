@@ -1,4 +1,4 @@
-package io.iamkyu.kgs;
+package io.iamkyu.generate;
 
 import org.springframework.jdbc.core.BatchPreparedStatementSetter;
 import org.springframework.jdbc.core.JdbcTemplate;

@@ -1,4 +1,4 @@
-package io.iamkyu.kgs;
+package io.iamkyu.generate;
 
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;

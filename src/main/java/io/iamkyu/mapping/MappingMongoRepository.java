@@ -1,4 +1,4 @@
-package io.iamkyu.ums;
+package io.iamkyu.mapping;
 
 
 import org.springframework.data.mongodb.repository.MongoRepository;

@@ -1,4 +1,4 @@
-package io.iamkyu.ums;
+package io.iamkyu.mapping;
 
 import lombok.AccessLevel;
 import lombok.Getter;

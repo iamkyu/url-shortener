@@ -1,9 +1,9 @@
 package io.iamkyu;
 
-import io.iamkyu.kgs.KeyGenerateService;
-import io.iamkyu.kgs.KeyJdbcRepository;
-import io.iamkyu.kgs.KeyRedisRepository;
-import io.iamkyu.ums.MappingService;
+import io.iamkyu.generate.KeyGenerateService;
+import io.iamkyu.generate.KeyJdbcRepository;
+import io.iamkyu.generate.KeyRedisRepository;
+import io.iamkyu.mapping.MappingService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;

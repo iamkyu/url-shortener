@@ -1,4 +1,4 @@
-package io.iamkyu.kgs;
+package io.iamkyu.generate;
 
 
 import lombok.AccessLevel;
