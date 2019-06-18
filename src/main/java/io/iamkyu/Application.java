@@ -3,6 +3,7 @@ package io.iamkyu;
 import io.iamkyu.kgs.KeyGenerateService;
 import io.iamkyu.kgs.KeyJdbcRepository;
 import io.iamkyu.kgs.KeyRedisRepository;
+import io.iamkyu.ums.MappingService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
@@ -23,6 +24,9 @@ public class Application {
     @Autowired
     KeyGenerateService service;
 
+    @Autowired
+    MappingService mappingService;
+
     public static void main(String[] args) {
         SpringApplication.run(Application.class, args);
     }
@@ -33,6 +37,9 @@ public class Application {
         return (a) -> {
             String key = service.getKey();
             log.info("key: {}", key);
+
+            mappingService.mapping(key, "foo.bar.com");
+            log.info("found: {}", mappingService.get(key));
         };
     }
 }
