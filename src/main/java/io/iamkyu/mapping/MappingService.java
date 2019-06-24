@@ -13,13 +13,15 @@ public class MappingService {
         this.mongoRepository = mongoRepository;
     }
 
-    public void mapping(String key, String url) {
+    public String mapping(String key, String url) {
         KeyMapper keyMapper = new KeyMapper(key, url, LocalDateTime.now());
-        mongoRepository.save(keyMapper);
+        KeyMapper saved = mongoRepository.save(keyMapper);
+        return saved.getKey();
     }
 
-    public KeyMapper get(String key) {
+    public String getUrl(String key) {
         return mongoRepository.findById(key)
+                .map(KeyMapper::getUrl)
                 .orElseThrow(RuntimeException::new);
     }
 }

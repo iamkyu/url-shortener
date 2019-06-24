@@ -1,0 +1,12 @@
+### Url 단축
+POST localhost:8080/mapping
+Content-Type: application/json
+
+{
+  "url": "http://google.com"
+}
+
+### 단축된 URL 로 접근
+GET http://localhost:8080/wzispnhy
+
+###
