@@ -1,5 +1,6 @@
 package io.iamkyu;
 
+import io.iamkyu.mapping.ShortUrlRequest;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -17,16 +18,15 @@ public class Controller {
         this.aggregateService = aggregateService;
     }
 
-    @PostMapping(value = "/mapping",
-            consumes = MediaType.APPLICATION_JSON_UTF8_VALUE,
-            produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
-    public AggregateService.ShortUrlResponse mapUrl(@RequestBody String url) {
-        return aggregateService.mapping(url);
+    @PostMapping(value = "/short-url",
+            consumes = MediaType.APPLICATION_JSON_VALUE,
+            produces = MediaType.APPLICATION_JSON_VALUE)
+    public AggregateService.ShortUrlResponse mapUrl(@RequestBody ShortUrlRequest mappingRequest) {
+        return aggregateService.mapping(mappingRequest.getUrl());
     }
 
     @GetMapping("/{key}")
     public RedirectView redirect(@PathVariable String key) {
-        // FIXME url 필드에 json 형태로 저장되어 있음.
         String actualUrl = aggregateService.getActualUrl(key);
 
         RedirectView redirectView = new RedirectView();

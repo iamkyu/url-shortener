@@ -20,7 +20,7 @@ public class MappingService {
     }
 
     public String getUrl(String key) {
-        return mongoRepository.findById(key)
+        return mongoRepository.findByKey(key)
                 .map(KeyMapper::getUrl)
                 .orElseThrow(RuntimeException::new);
     }

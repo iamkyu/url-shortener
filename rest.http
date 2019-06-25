@@ -1,5 +1,5 @@
 ### Url 단축
-POST localhost:8080/mapping
+POST localhost:8080/short-url
 Content-Type: application/json
 
 {
